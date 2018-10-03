@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
+  m_Name: InitialState
+  m_EditorClassIdentifier: 
+  title: A New Day
+  description: "Morning sun warms your face as you step into the cloister. One cleric
+    after another walk by you as they rush to the first daily service. It has been
+    almost a month since the monks took you in as you fled certain death from the
+    unknown assassins that murdered your family. The Considian Order might be by most
+    folks considered just a bunch of religious zealots, but their hospitality is certainly
+    unmatched, at least in the region.\r\n\nHowever, despite the comfort of a warm
+    bed and fresh food, you know that you cannot spend the entirety of the rest of
+    your life hiding in a monastery and that the monks would not let you stay here
+    forever either. Unless you would take the vows, that is."
+  transitions:
+  - {fileID: 11400000, guid: 4b71998a1b15cf04c98dc4cd851168ea, type: 2}
+  - {fileID: 11400000, guid: b0ffe4e0dd91a5e4281c39003bc1338f, type: 2}

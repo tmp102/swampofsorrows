@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
+  m_Name: FinalState
+  m_EditorClassIdentifier: 
+  title: The Journey Continues
+  description: "The abbot does not question your judgement nor does he agree. He calmly
+    hears out your case and without a word grabs a blank parchment, quill and a large
+    bottle of ink. As he hastily scrawls a letter, likely for you to deliver to someone,
+    he words its intentions to you:\r\n\r\n\"Go see friar Virgilio over in Demessi.
+    It's a large town north from here, you might have heard of it. Give him this and
+    he will give you shelter and possibly aid in your search for justice. If you leave
+    now, you will arrive by dusk,\" he pushes the letter into your palm as his hand
+    motions to you to leave.\r\n\r\nSeeing there's no point in dawdling around, you
+    pack your belongings and set out into the world once again."
+  transitions: []
