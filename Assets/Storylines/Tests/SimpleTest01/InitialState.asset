@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
   m_Name: InitialState
   m_EditorClassIdentifier: 
-  title: A Blood-thirsty Goblin
-  description: You land your feet onto the wet cave floor and your eyes take a while
+  m_Title: A Blood-thirsty Goblin
+  m_Description: You land your feet onto the wet cave floor and your eyes take a while
     to adjust from the bright daylight to the torch-lit underground. As you take a
     look around, you immediately spot a goblin leaning against a wall, deep in thought.
     You look into his gaze and see his emotions shifting as he notices you, from sheer
     surprise and confusion to determination and anger. He lets out a shriek that could
     rival that of a harpy, lifts his axe and begins to run towards you with another
     scream, this time a deeper one, longer, more controlled.
-  transitions:
+  m_Transitions:
   - {fileID: 11400000, guid: bd59d5bf697d5d346a70135e8cabfef9, type: 2}

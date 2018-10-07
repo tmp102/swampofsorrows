@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf5f9052db096b4e93d72d69123b03b, type: 3}
   m_Name: Option
   m_EditorClassIdentifier: 
-  sourceState: {fileID: 11400000, guid: a2856759e2e357e45bb4927f490daa7c, type: 2}
-  destinationState: {fileID: 11400000, guid: 6b100fb08b3105343b358209bbb23914, type: 2}
-  description: Draw your sword
+  m_SourceState: {fileID: 11400000, guid: a2856759e2e357e45bb4927f490daa7c, type: 2}
+  m_DestinationState: {fileID: 11400000, guid: 6b100fb08b3105343b358209bbb23914, type: 2}
+  m_Description: Draw your sword

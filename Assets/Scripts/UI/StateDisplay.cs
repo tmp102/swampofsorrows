@@ -12,56 +12,26 @@ public class StateDisplay : MonoBehaviour, IStateDisplay
     public class OptionSelectedEvent : UnityEvent<Transition> { }
 
     [SerializeField]
-    private Text _titleText;
-    public Text titleText
-    {
-        get
-        {
-            return _titleText;
-        }
-        set
-        {
-            _titleText = value;
-        }
-    }
+    private Text m_TitleText;
 
     [SerializeField]
-    private Text _descriptionText;
-    public Text descriptionText
-    {
-        get
-        {
-            return _descriptionText;
-        }
-        set
-        {
-            _descriptionText = value;
-        }
-    }
+    private Text m_DescriptionText;
 
     [SerializeField]
-    private OptionList _optionList;
-    public OptionList optionList
-    {
-        get
-        {
-            return _optionList;
-        }
-        set
-        {
-            _optionList = value;
-        }
-    }
+    private OptionList m_OptionList;
+
+    [SerializeField]
+    private OptionSelectedEvent m_OptionSelected;
 
     public string title
     {
         get
         {
-            return _titleText.text;
+            return m_TitleText.text;
         }
         set
         {
-            _titleText.text = value;
+            m_TitleText.text = value;
         }
     }
 
@@ -69,11 +39,11 @@ public class StateDisplay : MonoBehaviour, IStateDisplay
     {
         get
         {
-            return _descriptionText.text;
+            return m_DescriptionText.text;
         }
         set
         {
-            _descriptionText.text = value;
+            m_DescriptionText.text = value;
         }
     }
 
@@ -81,25 +51,59 @@ public class StateDisplay : MonoBehaviour, IStateDisplay
     {
         get
         {
-            return _optionList.options;
+            return m_OptionList.options;
         }
         set
         {
-            _optionList.options = value;
+            m_OptionList.options = value;
         }
     }
 
-    [SerializeField]
-    private OptionSelectedEvent _onOptionSelected;
+    public Text titleText
+    {
+        get
+        {
+            return m_TitleText;
+        }
+        set
+        {
+            m_TitleText = value;
+        }
+    }
+
+    public Text descriptionText
+    {
+        get
+        {
+            return m_DescriptionText;
+        }
+        set
+        {
+            m_DescriptionText = value;
+        }
+    }
+
+    public OptionList optionList
+    {
+        get
+        {
+            return m_OptionList;
+        }
+        set
+        {
+            m_OptionList = value;
+        }
+    }
+
     public OptionSelectedEvent onOptionSelected
     {
         get
         {
-            return _onOptionSelected;
+            return m_OptionSelected;
         }
         set
         {
-            _onOptionSelected = value;
+            m_OptionSelected = value;
         }
     }
 

@@ -8,41 +8,44 @@ namespace Narrative
     public class Section : State
     {
         [SerializeField]
-        private string _title;
+        private string m_Title;
+
+        [SerializeField]
+        [TextArea(10, 10)]
+        private string m_Description;
+
+        [SerializeField]
+        private List<Transition> m_Transitions = new List<Transition>();
+
         public string title
         {
             get
             {
-                return _title;
+                return m_Title;
             }
             set
             {
-                _title = value;
+                m_Title = value;
             }
         }
 
-        [SerializeField]
-        [TextArea(10, 10)]
-        private string _description;
         public string description
         {
             get
             {
-                return _description;
+                return m_Description;
             }
             set
             {
-                _description = value;
+                m_Description = value;
             }
         }
 
-        [SerializeField]
-        private List<Transition> _transitions = new List<Transition>();
         public override List<Transition> transitions
         {
             get
             {
-                return _transitions;
+                return m_Transitions;
             }
         }
 

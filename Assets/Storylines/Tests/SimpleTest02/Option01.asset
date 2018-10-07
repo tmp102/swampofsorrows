@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf5f9052db096b4e93d72d69123b03b, type: 3}
   m_Name: Option01
   m_EditorClassIdentifier: 
-  sourceState: {fileID: 11400000, guid: ee6eb7053a218864b90ff36433fba741, type: 2}
-  destinationState: {fileID: 11400000, guid: f1f583cd51d61bf45935234ce7b7ebe2, type: 2}
-  description: Visit sister Agatha
+  m_SourceState: {fileID: 11400000, guid: ee6eb7053a218864b90ff36433fba741, type: 2}
+  m_DestinationState: {fileID: 11400000, guid: f1f583cd51d61bf45935234ce7b7ebe2, type: 2}
+  m_Description: Talk to the neighbour

@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738a0092c82f55e41accf967cf534d94, type: 3}
   m_Name: SimpleTest01
   m_EditorClassIdentifier: 
-  states:
+  m_States:
   - {fileID: 11400000, guid: a2856759e2e357e45bb4927f490daa7c, type: 2}
   - {fileID: 11400000, guid: 6b100fb08b3105343b358209bbb23914, type: 2}

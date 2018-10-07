@@ -8,16 +8,17 @@ namespace Narrative
     public class Option : Transition
     {
         [SerializeField]
-        private string _description;
+        private string m_Description;
+
         public string description
         {
             get
             {
-                return _description;
+                return m_Description;
             }
             set
             {
-                _description = value;
+                m_Description = value;
             }
         }
 

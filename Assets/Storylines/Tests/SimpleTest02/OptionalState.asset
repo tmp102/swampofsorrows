@@ -11,14 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
   m_Name: OptionalState
   m_EditorClassIdentifier: 
-  title: 'Unfulfilled Desires '
-  description: "During one of the masses, you found yourself entranced by the beauty
-    one of the sisters, Agatha, after which you spent a few nights together right
-    under the abbess' nose. As this is probably the last chance to see her, you can't
-    help but attempt one last encounter of forbidden love.\r\n\r\nYou gather all the
-    inconspicuousness you can and take a stroll through the empty cloister towards
-    the latrine, inside and through the window into the gardens that connect the men's
-    and women's convents. But to your dismay, the window is closed shut and your sexual
-    fervour will have to remain unsatisfied.\r\n\r\nYou step out, disappointed."
-  transitions:
+  m_Title: The Neighbour
+  m_Description: Talked to the neighbour.
+  m_Transitions:
   - {fileID: 11400000, guid: 6d624c5c1b0ebb44da69325946862ddc, type: 2}

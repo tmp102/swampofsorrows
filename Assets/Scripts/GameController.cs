@@ -6,44 +6,47 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private StateDisplay _stateDisplay;
+    private StateDisplay m_StateDisplay;
+
+    [SerializeField]
+    private Storyline m_Storyline;
+
+    private State m_CurrentState;
+
     public StateDisplay stateDisplay
     {
         get
         {
-            return _stateDisplay;
+            return m_StateDisplay;
         }
         set
         {
-            _stateDisplay = value;
+            m_StateDisplay = value;
         }
     }
 
-    [SerializeField]
-    private Storyline _storyline;
     public Storyline storyline
     {
         get
         {
-            return _storyline;
+            return m_Storyline;
         }
         set
         {
-            _storyline = value;
+            m_Storyline = value;
         }
     }
 
-    private State _currentState;
     public State currentState
     {
         get
         {
-            return _currentState;
+            return m_CurrentState;
         }
         private set
         {
-            _currentState = value;
-            DisplayState(_currentState);
+            m_CurrentState = value;
+            DisplayState(m_CurrentState);
         }
     }
 

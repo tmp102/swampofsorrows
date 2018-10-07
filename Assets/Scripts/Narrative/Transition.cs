@@ -8,36 +8,38 @@ namespace Narrative
     public class Transition : ScriptableObject
     {
         [SerializeField]
-        private State _sourceState;
+        private State m_SourceState;
+
+        [SerializeField]
+        private State m_DestinationState;
+
         public State sourceState
         {
             get
             {
-                return _sourceState;
+                return m_SourceState;
             }
             set
             {
-                _sourceState = value;
+                m_SourceState = value;
             }
         }
 
-        [SerializeField]
-        private State _destinationState;
         public State destinationState
         {
             get
             {
-                return _destinationState;
+                return m_DestinationState;
             }
             set
             {
-                _destinationState = value;
+                m_DestinationState = value;
             }
         }
 
         public virtual void DisplayOn(ITransitionDisplay display)
         {
-            // do nothing
+            display.description = "Next...";
         }
     }
 }

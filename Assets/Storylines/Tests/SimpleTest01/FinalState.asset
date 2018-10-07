@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
   m_Name: FinalState
   m_EditorClassIdentifier: 
-  title: Victory
-  description: Just as you raise your sword, the goblin, salivating in anticipation,
+  m_Title: Victory
+  m_Description: Just as you raise your sword, the goblin, salivating in anticipation,
     runs himself into you, slicing the tip of your blade into and out of his guts.
     With a violent gurgle and blood spraying through his clenched teeth, he dies mere
     moments after.
-  transitions: []
+  m_Transitions: []

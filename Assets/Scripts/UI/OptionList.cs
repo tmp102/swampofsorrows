@@ -11,21 +11,17 @@ public class OptionList : MonoBehaviour
     public class OptionSelectedEvent : UnityEvent<Transition> { }
 
     [SerializeField]
-    private List<OptionButton> _buttons = new List<OptionButton>();
-    public List<OptionButton> buttons
-    {
-        get
-        {
-            return _buttons;
-        }
-    }
+    private List<OptionButton> m_Buttons = new List<OptionButton>();
+
+    [SerializeField]
+    private OptionSelectedEvent m_OnOptionSelected;
 
     public List<Transition> options
     {
         get
         {
             List<Transition> options = new List<Transition>();
-            foreach (OptionButton b in _buttons)
+            foreach (OptionButton b in m_Buttons)
             {
                 if (b.option != null)
                 {
@@ -40,17 +36,23 @@ public class OptionList : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    private OptionSelectedEvent _onOptionSelected;
+    public List<OptionButton> buttons
+    {
+        get
+        {
+            return m_Buttons;
+        }
+    }
+
     public OptionSelectedEvent onOptionSelected
     {
         get
         {
-            return _onOptionSelected;
+            return m_OnOptionSelected;
         }
         set
         {
-            _onOptionSelected = value;
+            m_OnOptionSelected = value;
         }
     }
 

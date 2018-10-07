@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf5f9052db096b4e93d72d69123b03b, type: 3}
   m_Name: Option02
   m_EditorClassIdentifier: 
-  sourceState: {fileID: 11400000, guid: ee6eb7053a218864b90ff36433fba741, type: 2}
-  destinationState: {fileID: 11400000, guid: 00cd6ca3c5f24da4395b09d03a735b15, type: 2}
-  description: Talk to the abbot
+  m_SourceState: {fileID: 11400000, guid: ee6eb7053a218864b90ff36433fba741, type: 2}
+  m_DestinationState: {fileID: 11400000, guid: 00cd6ca3c5f24da4395b09d03a735b15, type: 2}
+  m_Description: Step in the office

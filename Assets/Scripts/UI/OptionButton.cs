@@ -12,46 +12,15 @@ public class OptionButton : MonoBehaviour, ITransitionDisplay
     [Serializable]
     public class ButtonClickedEvent : UnityEvent<Transition> { }
 
-    private Transition _option;
-    public Transition option
-    {
-        get
-        {
-            return _option;
-        }
-        set
-        {
-            _option = value;
-            Display(_option);
-        }
-    }
+    private Transition m_Option;
 
-    private Button _button;
-    private Button button
-    {
-        get
-        {
-            return _button;
-        }
-        set
-        {
-            _button = value;
-        }
-    }
+    private Button m_Button;
 
     [SerializeField]
-    private Text _buttonText;
-    public Text buttonText
-    {
-        get
-        {
-            return _buttonText;
-        }
-        set
-        {
-            _buttonText = value;
-        }
-    }
+    private Text m_ButtonText;
+
+    [SerializeField]
+    private ButtonClickedEvent m_OnClick;
 
     public string description
     {
@@ -65,38 +34,73 @@ public class OptionButton : MonoBehaviour, ITransitionDisplay
         }
     }
 
-    [SerializeField]
-    private ButtonClickedEvent _onClick;
+    public Transition option
+    {
+        get
+        {
+            return m_Option;
+        }
+        set
+        {
+            m_Option = value;
+            Display(m_Option);
+        }
+    }
+
+    private Button button
+    {
+        get
+        {
+            return m_Button;
+        }
+        set
+        {
+            m_Button = value;
+        }
+    }
+
+    public Text buttonText
+    {
+        get
+        {
+            return m_ButtonText;
+        }
+        set
+        {
+            m_ButtonText = value;
+        }
+    }
+
     public ButtonClickedEvent onClick
     {
         get
         {
-            return _onClick;
+            return m_OnClick;
         }
         set
         {
-            _onClick = value;
+            m_OnClick = value;
         }
     }
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
+        m_Button = GetComponent<Button>();
     }
 
     private void OnEnable()
     {
-        if (_button != null)
+        if (m_Button != null)
         {
-            _button.onClick.AddListener(OnClick);
+            m_Button.onClick.AddListener(OnClick);
         }
     }
 
     private void OnDisable()
     {
-        if (_button != null)
+        if (m_Button != null)
         {
-            _button.onClick.RemoveListener(OnClick);
+            m_Button.onClick.RemoveListener(OnClick);
         }
     }
 
