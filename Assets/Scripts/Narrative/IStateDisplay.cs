@@ -5,7 +5,7 @@ using UnityEngine;
 
 public interface IStateDisplay
 {
-    string Title { get; set; }
-    string Description { get; set; }
-    List<Transition> Options { get; set; }
+    string title { get; set; }
+    string description { get; set; }
+    List<Transition> options { get; set; }
 }

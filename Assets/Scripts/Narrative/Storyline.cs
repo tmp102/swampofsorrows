@@ -8,12 +8,12 @@ namespace Narrative
     public class Storyline : ScriptableObject
     {
         [SerializeField]
-        private List<State> states = new List<State>();
-        public List<State> States
+        private List<State> _states = new List<State>();
+        public List<State> states
         {
             get
             {
-                return states;
+                return _states;
             }
         }
     }

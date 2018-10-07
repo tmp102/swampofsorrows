@@ -12,85 +12,96 @@ public class StateDisplay : MonoBehaviour, IStateDisplay
     public class OptionSelectedEvent : UnityEvent<Transition> { }
 
     [SerializeField]
-    private Text titleText;
-    public Text TitleText
+    private Text _titleText;
+    public Text titleText
     {
         get
         {
-            return titleText;
+            return _titleText;
         }
         set
         {
-            titleText = value;
+            _titleText = value;
         }
     }
 
     [SerializeField]
-    private Text descriptionText;
-    public Text DescriptionText
+    private Text _descriptionText;
+    public Text descriptionText
     {
         get
         {
-            return descriptionText;
+            return _descriptionText;
         }
         set
         {
-            descriptionText = value;
+            _descriptionText = value;
         }
     }
 
     [SerializeField]
-    private OptionList optionList;
-    public OptionList OptionList
+    private OptionList _optionList;
+    public OptionList optionList
     {
         get
         {
-            return optionList;
+            return _optionList;
         }
         set
         {
-            optionList = value;
+            _optionList = value;
         }
     }
 
-    public string Title
+    public string title
     {
         get
         {
-            return titleText.text;
+            return _titleText.text;
         }
         set
         {
-            titleText.text = value;
+            _titleText.text = value;
         }
     }
 
-    public string Description
+    public string description
     {
         get
         {
-            return descriptionText.text;
+            return _descriptionText.text;
         }
         set
         {
-            descriptionText.text = value;
+            _descriptionText.text = value;
         }
     }
 
-    public List<Transition> Options
+    public List<Transition> options
     {
         get
         {
-            return optionList.Options;
+            return _optionList.options;
         }
         set
         {
-            optionList.Options = value;
+            _optionList.options = value;
         }
     }
 
     [SerializeField]
-    public OptionSelectedEvent onOptionSelected;
+    private OptionSelectedEvent _onOptionSelected;
+    public OptionSelectedEvent onOptionSelected
+    {
+        get
+        {
+            return _onOptionSelected;
+        }
+        set
+        {
+            _onOptionSelected = value;
+        }
+    }
 
     public void Display(State state)
     {

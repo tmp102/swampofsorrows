@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface ITransitionDisplay
 {
-    string Description { get; set; }
+    string description { get; set; }
 }

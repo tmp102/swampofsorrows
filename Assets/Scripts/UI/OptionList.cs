@@ -11,25 +11,25 @@ public class OptionList : MonoBehaviour
     public class OptionSelectedEvent : UnityEvent<Transition> { }
 
     [SerializeField]
-    private List<OptionButton> buttons = new List<OptionButton>();
-    public List<OptionButton> Buttons
+    private List<OptionButton> _buttons = new List<OptionButton>();
+    public List<OptionButton> buttons
     {
         get
         {
-            return buttons;
+            return _buttons;
         }
     }
 
-    public List<Transition> Options
+    public List<Transition> options
     {
         get
         {
             List<Transition> options = new List<Transition>();
-            foreach (OptionButton b in buttons)
+            foreach (OptionButton b in _buttons)
             {
-                if (b.Option != null)
+                if (b.option != null)
                 {
-                    options.Add(b.Option);
+                    options.Add(b.option);
                 }
             }
             return options;
@@ -41,19 +41,30 @@ public class OptionList : MonoBehaviour
     }
 
     [SerializeField]
-    public OptionSelectedEvent onOptionSelected;
+    private OptionSelectedEvent _onOptionSelected;
+    public OptionSelectedEvent onOptionSelected
+    {
+        get
+        {
+            return _onOptionSelected;
+        }
+        set
+        {
+            _onOptionSelected = value;
+        }
+    }
 
     private void DisplayOptions(List<Transition> options)
     {
-        for (int i = 0; i < options.Count && i < Buttons.Count; i++)
+        for (int i = 0; i < options.Count && i < buttons.Count; i++)
         {
-            Buttons[i].Option = options[i];
-            Buttons[i].gameObject.SetActive(true);
+            buttons[i].option = options[i];
+            buttons[i].gameObject.SetActive(true);
         }
-        for (int i = options.Count; i < Buttons.Count; i++)
+        for (int i = options.Count; i < buttons.Count; i++)
         {
-            Buttons[i].gameObject.SetActive(false);
-            Buttons[i].Option = null;
+            buttons[i].gameObject.SetActive(false);
+            buttons[i].option = null;
         }
     }
 

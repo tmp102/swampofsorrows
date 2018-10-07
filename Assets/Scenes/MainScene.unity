@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateDisplay: {fileID: 1058515430}
-  storyline: {fileID: 11400000, guid: e7b72231cad0b6b4988aa95e94457b17, type: 2}
+  storyline: {fileID: 11400000, guid: e3dcc603bd35b9a47b63fa62a09b95f6, type: 2}
 --- !u!4 &965968235
 Transform:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 965968233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 567.7683, y: 303.57056, z: 3.9598267}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

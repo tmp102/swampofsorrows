@@ -8,30 +8,30 @@ namespace Narrative
     public class Transition : ScriptableObject
     {
         [SerializeField]
-        private State sourceState;
-        public State SourceState
+        private State _sourceState;
+        public State sourceState
         {
             get
             {
-                return sourceState;
+                return _sourceState;
             }
             set
             {
-                sourceState = value;
+                _sourceState = value;
             }
         }
 
         [SerializeField]
-        private State destinationState;
-        public State DestinationState
+        private State _destinationState;
+        public State destinationState
         {
             get
             {
-                return destinationState;
+                return _destinationState;
             }
             set
             {
-                destinationState = value;
+                _destinationState = value;
             }
         }
 

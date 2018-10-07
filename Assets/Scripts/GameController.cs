@@ -6,59 +6,59 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private StateDisplay stateDisplay;
-    public StateDisplay StateDisplay
+    private StateDisplay _stateDisplay;
+    public StateDisplay stateDisplay
     {
         get
         {
-            return stateDisplay;
+            return _stateDisplay;
         }
         set
         {
-            stateDisplay = value;
+            _stateDisplay = value;
         }
     }
 
     [SerializeField]
-    private Storyline storyline;
-    public Storyline Storyline
+    private Storyline _storyline;
+    public Storyline storyline
     {
         get
         {
-            return storyline;
+            return _storyline;
         }
         set
         {
-            storyline = value;
+            _storyline = value;
         }
     }
 
-    private State currentState;
-    public State CurrentState
+    private State _currentState;
+    public State currentState
     {
         get
         {
-            return currentState;
+            return _currentState;
         }
         private set
         {
-            currentState = value;
-            DisplayState(currentState);
+            _currentState = value;
+            DisplayState(_currentState);
         }
     }
 
     private void Start()
     {
-        CurrentState = Storyline.States[0];
+        currentState = storyline.states[0];
     }
 
     private void DisplayState(State state)
     {
-        StateDisplay.Display(state);
+        stateDisplay.Display(state);
     }
 
     public void OnOptionSelected(Transition transition)
     {
-        CurrentState = transition.DestinationState;
+        currentState = transition.destinationState;
     }
 }

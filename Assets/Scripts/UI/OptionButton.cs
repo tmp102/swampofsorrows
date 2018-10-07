@@ -12,80 +12,91 @@ public class OptionButton : MonoBehaviour, ITransitionDisplay
     [Serializable]
     public class ButtonClickedEvent : UnityEvent<Transition> { }
 
-    private Transition option;
-    public Transition Option
+    private Transition _option;
+    public Transition option
     {
         get
         {
-            return option;
+            return _option;
         }
         set
         {
-            option = value;
-            Display(option);
+            _option = value;
+            Display(_option);
         }
     }
 
-    private Button button;
-    private Button Button
+    private Button _button;
+    private Button button
     {
         get
         {
-            return button;
+            return _button;
         }
         set
         {
-            button = value;
-        }
-    }
-
-    [SerializeField]
-    private Text buttonText;
-    public Text ButtonText
-    {
-        get
-        {
-            return buttonText;
-        }
-        set
-        {
-            buttonText = value;
-        }
-    }
-
-    public string Description
-    {
-        get
-        {
-            return ButtonText.text;
-        }
-        set
-        {
-            ButtonText.text = value;
+            _button = value;
         }
     }
 
     [SerializeField]
-    public ButtonClickedEvent onClick;
+    private Text _buttonText;
+    public Text buttonText
+    {
+        get
+        {
+            return _buttonText;
+        }
+        set
+        {
+            _buttonText = value;
+        }
+    }
+
+    public string description
+    {
+        get
+        {
+            return buttonText.text;
+        }
+        set
+        {
+            buttonText.text = value;
+        }
+    }
+
+    [SerializeField]
+    private ButtonClickedEvent _onClick;
+    public ButtonClickedEvent onClick
+    {
+        get
+        {
+            return _onClick;
+        }
+        set
+        {
+            _onClick = value;
+        }
+    }
 
     private void Awake()
     {
-        button = GetComponent<Button>();
+        _button = GetComponent<Button>();
     }
 
     private void OnEnable()
     {
-        if (button != null)
+        if (_button != null)
         {
-            button.onClick.AddListener(OnClick);
+            _button.onClick.AddListener(OnClick);
         }
     }
 
     private void OnDisable()
     {
-        if (button != null)
+        if (_button != null)
         {
-            button.onClick.RemoveListener(OnClick);
+            _button.onClick.RemoveListener(OnClick);
         }
     }
 
@@ -97,12 +108,12 @@ public class OptionButton : MonoBehaviour, ITransitionDisplay
         }
         else
         {
-            Description = String.Empty;
+            description = String.Empty;
         }
     }
 
     public void OnClick()
     {
-        onClick.Invoke(Option);
+        onClick.Invoke(option);
     }
 }

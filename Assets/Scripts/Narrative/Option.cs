@@ -8,22 +8,22 @@ namespace Narrative
     public class Option : Transition
     {
         [SerializeField]
-        private string description;
-        public string Description
+        private string _description;
+        public string description
         {
             get
             {
-                return description;
+                return _description;
             }
             set
             {
-                description = value;
+                _description = value;
             }
         }
 
         public override void DisplayOn(ITransitionDisplay display)
         {
-            display.Description = Description;
+            display.description = description;
         }
     }
 }
