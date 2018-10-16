@@ -11,6 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
   m_Name: InitialState
   m_EditorClassIdentifier: 
+  m_Rect:
+    serializedVersion: 2
+    x: 200
+    y: 200
+    width: 200
+    height: 50
   m_Title: A Blood-thirsty Goblin
   m_Description: You land your feet onto the wet cave floor and your eyes take a while
     to adjust from the bright daylight to the torch-lit underground. As you take a

@@ -11,6 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
   m_Name: FinalState
   m_EditorClassIdentifier: 
+  m_Rect:
+    serializedVersion: 2
+    x: 800
+    y: 200
+    width: 200
+    height: 50
   m_Title: Ambush
   m_Description: Got shot by an unknown assailant.
   m_Transitions: []

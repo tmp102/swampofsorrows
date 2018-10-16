@@ -11,6 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23cd30bdcd5d2942b17bdacf1a7006b, type: 3}
   m_Name: FinalState
   m_EditorClassIdentifier: 
+  m_Rect:
+    serializedVersion: 2
+    x: 800
+    y: 400
+    width: 200
+    height: 50
   m_Title: Victory
   m_Description: Just as you raise your sword, the goblin, salivating in anticipation,
     runs himself into you, slicing the tip of your blade into and out of his guts.

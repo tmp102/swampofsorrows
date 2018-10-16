@@ -55,5 +55,17 @@ namespace Narrative
             display.description = description;
             display.options = transitions;
         }
+
+        public override void Draw(bool selected = false)
+        {
+            if (selected)
+            {
+                GUI.Box(rect, new GUIContent(title + "*"));
+            }
+            else
+            {
+                GUI.Box(rect, new GUIContent(title));
+            }
+        }
     }
 }
