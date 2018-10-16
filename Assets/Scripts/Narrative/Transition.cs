@@ -49,9 +49,6 @@ namespace Narrative
 
                 Rect rect = new Rect(centerPoint.x - 10.0f, centerPoint.y - 10.0f, 20.0f, 20.0f);
 
-                Debug.Log(centerPoint);
-                Debug.Log(rect);
-
                 return new SelectionBox(rect);
             }
         }
