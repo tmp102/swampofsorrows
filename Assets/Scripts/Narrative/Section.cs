@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace Narrative
@@ -58,14 +60,18 @@ namespace Narrative
 
         public override void Draw(bool selected = false)
         {
+            GUIStyle style = new GUIStyle();
             if (selected)
             {
-                GUI.Box(rect, new GUIContent(title + "*"));
+                style.normal.background = EditorGUIUtility.Load("builtin skins/darkskin/images/node1 on.png") as Texture2D;
             }
             else
             {
-                GUI.Box(rect, new GUIContent(title));
+                style.normal.background = EditorGUIUtility.Load("builtin skins/darkskin/images/node1.png") as Texture2D;
             }
+            style.border = new RectOffset(12, 12, 12, 12);
+            style.alignment = TextAnchor.MiddleCenter;
+            GUI.Box(rect, new GUIContent(title), style);
         }
     }
 }

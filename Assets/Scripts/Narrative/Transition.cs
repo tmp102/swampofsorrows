@@ -47,7 +47,7 @@ namespace Narrative
 
                 Vector2 centerPoint = startPosition + (endPosition - startPosition) / 2;
 
-                Rect rect = new Rect(centerPoint.x - 10.0f, centerPoint.y - 10.0f, 20.0f, 20.0f);
+                Rect rect = new Rect(centerPoint.x - 20.0f, centerPoint.y - 20.0f, 40.0f, 40.0f);
 
                 return new SelectionBox(rect);
             }
@@ -74,8 +74,8 @@ namespace Narrative
 
         private static void DrawLine(State sourceState, State destinationState, Color color, float width)
         {
-            Vector2 startPosition = sourceState.rect.center + new Vector2(sourceState.rect.size.x / 2, 0.0f);
-            Vector2 endPosition = destinationState.rect.center - new Vector2(destinationState.rect.size.x / 2, 0.0f);
+            Vector2 startPosition = sourceState.rect.center + new Vector2(sourceState.rect.size.x / 2, 0.0f) + Vector2.left * 12.0f;
+            Vector2 endPosition = destinationState.rect.center - new Vector2(destinationState.rect.size.x / 2, 0.0f) + Vector2.right * 12.0f;
             Vector2 startTangent = startPosition + Vector2.right * 75.0f;
             Vector2 endTangent = endPosition + Vector2.left * 75.0f;
 

@@ -115,6 +115,7 @@ public class StorylineEditor : EditorWindow
     {
         if (target != null)
         {
+            DrawBackground();
             DrawTransitions();
             DrawStates();
 
@@ -127,6 +128,15 @@ public class StorylineEditor : EditorWindow
         {
             Repaint();
         }
+    }
+
+    private void DrawBackground()
+    {
+        Texture2D texture = new Texture2D(1, 1);
+        texture.SetPixel(0, 0, new Color(0.3f, 0.3f, 0.3f));
+        texture.Apply();
+
+        GUI.DrawTexture(new Rect(0, 0, maxSize.x, maxSize.y), texture);
     }
 
     private void DrawStates()
@@ -158,6 +168,9 @@ public class StorylineEditor : EditorWindow
             case EventType.MouseDown:
                 OnMouseDown(e);
                 break;
+            case EventType.MouseDrag:
+                OnMouseDrag(e);
+                break;
         }
     }
 
@@ -166,6 +179,21 @@ public class StorylineEditor : EditorWindow
         if (e.button == 0)
         {
             SelectItem(e.mousePosition);
+
+            GUI.changed = true;
+        }
+    }
+
+    private void OnMouseDrag(Event e)
+    {
+        State selectedState = selectedItem as State;
+        if (selectedState != null)
+        {
+            Rect rect = selectedState.rect;
+            rect.position += e.delta;
+            selectedState.rect = rect;
+
+            GUI.changed = true;
         }
     }
 
