@@ -23,6 +23,30 @@ namespace Narrative
             }
         }
 
+        public Vector2 position
+        {
+            get
+            {
+                return m_Rect.position;
+            }
+            set
+            {
+                m_Rect.position = value;
+            }
+        }
+
+        public Vector2 size
+        {
+            get
+            {
+                return m_Rect.size;
+            }
+            set
+            {
+                m_Rect.size = value;
+            }
+        }
+
         public SelectionBox selectionBox
         {
             get

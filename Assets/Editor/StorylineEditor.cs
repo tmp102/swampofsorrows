@@ -24,19 +24,6 @@ public class StorylineEditor : EditorWindow
         }
     }
 
-    public ISelectable selectedItem
-    {
-        get
-        {
-            return m_SelectedItem;
-        }
-        set
-        {
-            m_SelectedItem = value;
-            Repaint();
-        }
-    }
-
     private List<State> states
     {
         get
@@ -69,6 +56,35 @@ public class StorylineEditor : EditorWindow
             {
                 return null;
             }
+        }
+    }
+
+    public ISelectable selectedItem
+    {
+        get
+        {
+            return m_SelectedItem;
+        }
+        private set
+        {
+            m_SelectedItem = value;
+            Repaint();
+        }
+    }
+
+    public State selectedState
+    {
+        get
+        {
+            return m_SelectedItem as State;
+        }
+    }
+
+    public Transition selectedTransition
+    {
+        get
+        {
+            return m_SelectedItem as Transition;
         }
     }
 
@@ -145,7 +161,7 @@ public class StorylineEditor : EditorWindow
         {
             foreach (State s in states)
             {
-                s.Draw(s == selectedItem);
+                s.Draw(s == selectedState);
             }
         }
     }
@@ -156,7 +172,7 @@ public class StorylineEditor : EditorWindow
         {
             foreach (Transition t in transitions)
             {
-                t.Draw(t == selectedItem);
+                t.Draw(t == selectedTransition);
             }
         }
     }
@@ -181,6 +197,11 @@ public class StorylineEditor : EditorWindow
             SelectItem(e.mousePosition);
 
             GUI.changed = true;
+        }
+        if (e.button == 1)
+        {
+            SelectItem(e.mousePosition);
+            ShowContextMenu(e.mousePosition);
         }
     }
 
@@ -229,5 +250,72 @@ public class StorylineEditor : EditorWindow
         }
 
         selectedItem = item;
+    }
+
+    private void ShowContextMenu(Vector2 position)
+    {
+        GenericMenu menu = new GenericMenu();
+        State selectedState = selectedItem as State;
+        Transition selectedTransition = selectedItem as Transition;
+        if (selectedState != null)
+        {
+            menu.AddItem(new GUIContent("Remove State"), false, () => RemoveState(selectedState));
+        }
+        else if (selectedTransition != null)
+        {
+            menu.AddItem(new GUIContent("Remove Transition"), false, () => RemoveTransition(selectedTransition));
+        }
+        else
+        {
+            menu.AddItem(new GUIContent("Add State/Section"), false, () => CreateState(typeof(Section), position));
+        }
+        menu.ShowAsContext();
+    }
+
+    private void CreateState(System.Type type, Vector2 position)
+    {
+        State state = ScriptableObject.CreateInstance(type) as State;
+        if (state != null)
+        {
+            state.name = type.Name;
+            //state.hideFlags = HideFlags.HideInHierarchy;
+            state.position = position;
+            states.Add(state);
+            AssetDatabase.AddObjectToAsset(state, target);
+            AssetDatabase.SaveAssets();
+        }
+    }
+
+    private void RemoveState(State state)
+    {
+        if (state != null)
+        {
+            List<Transition> obsoleteTransitions = new List<Transition>();
+
+            foreach (Transition t in transitions)
+            {
+                if (t.destinationState == state)
+                {
+                    obsoleteTransitions.Add(t);
+                }
+            }
+
+            foreach (Transition t in obsoleteTransitions)
+            {
+                t.sourceState.transitions.Remove(t);
+            }
+
+            states.Remove(state);
+            DestroyImmediate(state, true);
+        }
+    }
+
+    private void RemoveTransition(Transition transition)
+    {
+        if (transition != null)
+        {
+            transition.sourceState.transitions.Remove(transition);
+            DestroyImmediate(transition, true);
+        }
     }
 }
